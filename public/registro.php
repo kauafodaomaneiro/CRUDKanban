@@ -2,6 +2,16 @@
 include '../config/db.php';
 ?>
 
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $nome = $POST['nome'];
+    $email = $POST['email'];
+    $senha = $post['senha'];
+}
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

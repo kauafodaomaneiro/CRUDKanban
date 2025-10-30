@@ -2,9 +2,7 @@
 include '../config/db.php';
 ?>
 
-<?php
-
-?>
+<?php?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
