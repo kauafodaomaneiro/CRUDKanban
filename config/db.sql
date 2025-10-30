@@ -12,7 +12,10 @@ CREATE TABLE tarefa(
 	id INT AUTO_INCREMENT PRIMARY KEY,
     descricao varchar(220) NOT NULL,
     setor varchar(220) NOT NULL,
-    prioridade ENUM (baixa,media,alta),
+    prioridade ENUM ('baixa' ,'media' ,'alta'),
     cadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
-    status ENUM (afazer,fazendo,pronto)
+    stats ENUM ('afazer' ,'fazendo' ,'pronto'),
+    
+    id_usuario INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
