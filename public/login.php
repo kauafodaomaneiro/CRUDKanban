@@ -1,3 +1,10 @@
+<?php
+include '../config/db.php';
+?>
+
+<?php
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
