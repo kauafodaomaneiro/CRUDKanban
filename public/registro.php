@@ -1,13 +1,12 @@
 <?php
 include '../config/db.php';
-?>
 
-<?php
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $nome = $POST['nome'];
     $email = $POST['email'];
-    $senha = $post['senha'];
+
+    $sql = "INSERT INTO usuario (nome, email)
+    VALUES ('$nome', '$email')";
 }
 
 ?>
@@ -21,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     
-    <form id="cadastro" method="post">
+    <form method="POST" action="registro.php">
 
         <h2>Cadastro</h2>
         <label for="nome">Nome:</label>
@@ -29,12 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
-
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required><br><br>
-
-        <label for="confirmarSenha">Confirmar Senha:</label>
-        <input type="password" id="senha" name="senha" required><br><br>
 
         <input type="submit" value="Cadastrar">
     </form>

@@ -6,7 +6,6 @@ CREATE TABLE usuario(
 	id INT AUTO_INCREMENT PRIMARY KEY,
     nome varchar(45) NOT NULL,
     email varchar(220) NOT NULL UNIQUE
-    senha varchar(45) NOT NULL
 );
 
 CREATE TABLE tarefa(
