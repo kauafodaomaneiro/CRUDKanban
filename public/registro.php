@@ -2,11 +2,17 @@
 include '../config/db.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $POST['nome'];
-    $email = $POST['email'];
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
 
-    $sql = "INSERT INTO usuario (nome, email)
-    VALUES ('$nome', '$email')";
+    $sql = "INSERT INTO usuario (nome, email) VALUE ('$nome', '$email')";
+
+    if ($conn->query($sql) === true) {
+        echo "Regitrado.";
+    } else {
+        echo "Erro " . $sql . '<br>' . $conn->error;
+    }
+    $conn->close();
 }
 
 ?>
@@ -24,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <h2>Cadastro</h2>
         <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required><br><br>
+        <input type="text" name="nome" required><br><br>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" name="email" required><br><br>
 
         <input type="submit" value="Cadastrar">
     </form>

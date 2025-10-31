@@ -1,0 +1,23 @@
+body{
+    background-color: black;
+    color: white;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.caixa{
+    border: 1px solid;
+    border-color: rgb(183, 189, 200);
+    color: white;
+    
+}
+
+.tarefa{
+    border: 1px solid;
+    border-color: rgb(183, 189, 200);
+    color: white;
+}
